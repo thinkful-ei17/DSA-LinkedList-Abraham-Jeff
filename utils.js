@@ -79,6 +79,21 @@ function reverseList(list){
   return node;
 }
 
-module.exports = {displayList, displaySize, isEmptyCheck, findPrevious, findLast, reverseList};
+function thirdFromEnd(SSL) {
+  let tempNode = SSL.head;
+  
+  
+  while (tempNode.next.next.next.next !== null) {
+    tempNode = tempNode.next;
+  }
+  console.log(tempNode.next);
+}
+
+function middleList(SSL) {
+
+}
+
+
+module.exports = {displayList, displaySize, isEmptyCheck, findPrevious, findLast, reverseList, thirdFromEnd};
 // module.exports = displayList;
 
