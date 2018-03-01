@@ -107,7 +107,7 @@ function middleList(SSL) {
     newCounter++;
   }
 
-  return tempNode.next.value;
+  return tempNode.next;
 }
 
 // else {
