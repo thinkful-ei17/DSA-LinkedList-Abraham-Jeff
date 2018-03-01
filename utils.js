@@ -1,5 +1,5 @@
-'use strict';
 
+/*eslint-disable*/
 /**
    * Displays the linked listen
    * @param {any} SSL takes a linked list
@@ -35,7 +35,21 @@ function isEmptyCheck(SSL) {
   }
 }
 
+/**
+ * Finds the previous node for a given node value
+ * 
+ * @param {LinkedList} linkedList the linked list to search
+ * @param {any} item a node value item to search for
+ * @returns {Node} returns the found node 
+ */
+function findPrevious(linkedList, item){
+  let head = linkedList.head;
+  while(head.next.value !== item){
+    head = head.next;
+  }
+  return head;
+}
 
-module.exports = {displayList, displaySize, isEmptyCheck};
+module.exports = {displayList, displaySize, isEmptyCheck, findPrevious};
 // module.exports = displayList;
 

@@ -1,14 +1,14 @@
-'use strict';
+
 
 const LinkedList = require('./linkedList');
-const {displayList, displaySize, isEmptyCheck} = require('./utils');
+const {displayList, displaySize, isEmptyCheck, findPrevious} = require('./utils');
 
 const main = () => {
   const SSL = new LinkedList();
-  // SSL.insertFirst('Apollo');
-  // SSL.insertLast('Boomer');
-  // SSL.insertLast('Helo');
-  // SSL.insertLast('Husker');
+  SSL.insertFirst('Apollo');
+  SSL.insertLast('Boomer');
+  SSL.insertLast('Helo');
+  SSL.insertLast('Husker');
   // SSL.insertLast('Starbuck');
   // SSL.insertLast('Tauhida');
   // SSL.remove('squirrel');
@@ -23,11 +23,11 @@ const main = () => {
   // console.log((JSON.stringify(SSL)));
   // displayList(SSL, true);
   // displaySize(SSL);
-  isEmptyCheck(SSL);
+  // isEmptyCheck(SSL);
   // console.log((JSON.stringify(SSL)));
+  console.log(findPrevious(SSL, 'Husker'));
 };
 
 main();
-
 
 
