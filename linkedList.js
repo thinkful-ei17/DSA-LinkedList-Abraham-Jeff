@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  *
  *
@@ -72,6 +74,41 @@ class LinkedList {
     }
   }
 
+  insertAt(item, position){
+    let i = 1;
+
+    if (position < 0) {
+      console.log('Invalid Index');
+      return;
+    }
+    
+    if (this.head === null || position === 0) {
+      this.insertFirst(item);
+    } 
+
+    else {
+      let tempNode = this.head;
+      while(i !== position) {
+        if (!tempNode || !tempNode.next) {
+          console.log('Index Out of Bounds');
+          return;
+        }
+        console.log(tempNode);
+        tempNode = tempNode.next;
+        console.log(tempNode);
+        i++;
+      }
+      
+      console.log(item);
+      console.log(tempNode.value);
+
+      // let newNode = new _Node(item, tempNode.next);
+      // tempNode.next = newNode;
+
+      this.insertBefore(item, tempNode.value);
+    }
+  }
+  
   /**
    *
    *
@@ -151,5 +188,7 @@ class LinkedList {
     previousNode.next = currNode.next;
   }
 }
+
+
 
 module.exports = LinkedList;
