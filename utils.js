@@ -50,6 +50,20 @@ function findPrevious(linkedList, item){
   return head;
 }
 
-module.exports = {displayList, displaySize, isEmptyCheck, findPrevious};
+/**
+ * 
+ * 
+ * @param {any} linkedList 
+ * @returns 
+ */
+function findLast (linkedList){
+  let head = linkedList.head;
+  while(head.next !== null){
+    head = head.next;
+  }
+  return head;
+}
+
+module.exports = {displayList, displaySize, isEmptyCheck, findPrevious, findLast};
 // module.exports = displayList;
 
