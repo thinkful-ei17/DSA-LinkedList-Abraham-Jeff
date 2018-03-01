@@ -7,7 +7,8 @@ const {displayList,
   findPrevious,
   findLast,
   reverseList,
-  thirdFromEnd
+  thirdFromEnd,
+  middleList
 } = require('./utils');
 
 // function trackFromEnd(SSL, value) {
@@ -27,11 +28,11 @@ const main = () => {
   SSL.insertLast('Boomer');
   SSL.insertLast('Helo');
   SSL.insertLast('Husker');
-  // SSL.insertLast('Starbuck');
-  // SSL.insertLast('Tauhida');
+  SSL.insertLast('Starbuck');
+  SSL.insertLast('Tauhida');
   // SSL.remove('squirrel');
   // SSL.insertBefore('squirrel', 'Boomer');
-  // SSL.insertAfter('Starship', 'Husker');
+  SSL.insertAfter('Starship', 'Husker');
   // console.log(JSON.stringify(SSL));
   // SSL.insertAt('Number Seven', 2);
   // SSL.insertAt('Laura Roslin', 2);
@@ -47,7 +48,8 @@ const main = () => {
   // console.log(findLast(SSL));
   // console.log(reverseList(SSL));
   // displayList(SSL, true);
-  thirdFromEnd(SSL);
+  // thirdFromEnd(SSL);
+  console.log(middleList(SSL));
 };
 
 main();

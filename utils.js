@@ -90,10 +90,36 @@ function thirdFromEnd(SSL) {
 }
 
 function middleList(SSL) {
+  let tempNode = SSL.head;
 
+  let counter = 1;
+  while (tempNode.next !== null) {
+    counter++;
+    tempNode = tempNode.next;
+  }
+
+  middleNum = Math.floor(counter / 2);
+  let newCounter = 1;
+
+  tempNode = SSL.head;
+  while(newCounter !== middleNum) {
+    tempNode = tempNode.next;
+    newCounter++;
+  }
+
+  return tempNode.next.value;
 }
 
+// else {
+//   let tempNode = this.head;
+//   while(i !== position) {
+//     if (!tempNode || !tempNode.next) {
+//       console.log('Index Out of Bounds');
+//       return;
+//     }
+//     tempNode = tempNode.next;
+//     i++;
 
-module.exports = {displayList, displaySize, isEmptyCheck, findPrevious, findLast, reverseList, thirdFromEnd};
+module.exports = {displayList, displaySize, isEmptyCheck, findPrevious, findLast, reverseList, thirdFromEnd, middleList};
 // module.exports = displayList;
 
