@@ -1,7 +1,13 @@
 
 
 const LinkedList = require('./linkedList');
-const {displayList, displaySize, isEmptyCheck, findPrevious, findLast} = require('./utils');
+const {displayList,
+  displaySize,
+  isEmptyCheck,
+  findPrevious,
+  findLast,
+  reverseList,
+} = require('./utils');
 
 const main = () => {
   const SSL = new LinkedList();
@@ -26,7 +32,9 @@ const main = () => {
   // isEmptyCheck(SSL);
   // console.log((JSON.stringify(SSL)));
   // console.log(findPrevious(SSL, 'Husker'));
-  console.log(findLast(SSL));
+  // console.log(findLast(SSL));
+  console.log(reverseList(SSL));
+  displayList(SSL, true);
 };
 
 main();

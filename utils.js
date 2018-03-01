@@ -64,6 +64,21 @@ function findLast (linkedList){
   return head;
 }
 
-module.exports = {displayList, displaySize, isEmptyCheck, findPrevious, findLast};
+function reverseList(list){
+  let node = list.head;
+  let previousNode = null;
+  let previousNodeNext;
+
+  while(node !== null){
+    previousNodeNext = node.next;
+    node.next = previousNode;
+    previousNode = node;
+    node = previousNodeNext;
+  }
+  list.head = previousNode;
+  return node;
+}
+
+module.exports = {displayList, displaySize, isEmptyCheck, findPrevious, findLast, reverseList};
 // module.exports = displayList;
 
