@@ -29,6 +29,49 @@ class LinkedList {
     this.head = null;
   }
 
+
+  /**
+   *
+   *
+   * @param {any} item
+   * @param {any} beforeItem
+   * @memberof LinkedList
+   */
+  insertBefore(item, beforeItem) {
+    if (this.head === null) {
+      this.insertFirst(item);
+    } else {
+      let tempNode = this.head;
+      // while (tempNode.value !== beforeItem) {
+      while (tempNode.next.value !== beforeItem) {
+        tempNode = tempNode.next;
+      }
+      let newNode = new _Node(item, tempNode.next);
+      tempNode.next = newNode;
+    }
+  }
+
+  /**
+   *
+   *
+   * @param {any} item
+   * @param {any} afterItem
+   * @memberof LinkedList
+   */
+  insertAfter(item, afterItem) {
+    if (this.head === null) {
+      this.insertFirst(item);
+    } else {
+      let tempNode = this.head;
+      // while (tempNode.value !== beforeItem) {
+      while (tempNode.value !== afterItem) {
+        tempNode = tempNode.next;
+      }
+      let newNode = new _Node(item, tempNode.next);
+      tempNode.next = newNode;
+    }
+  }
+
   /**
    *
    *
@@ -80,7 +123,7 @@ class LinkedList {
   }
 
   /**
-   *
+   * Removes an item from the linked list
    *
    * @param {any} item
    * @return
@@ -108,3 +151,5 @@ class LinkedList {
     previousNode.next = currNode.next;
   }
 }
+
+module.exports = LinkedList;
