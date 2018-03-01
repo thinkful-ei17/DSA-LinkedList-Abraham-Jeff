@@ -82,7 +82,7 @@ class LinkedList {
       return;
     }
     
-    if (this.head === null || position === 0) {
+    if (this.head === null || position === 0 || position === 1) {
       this.insertFirst(item);
     } 
 
@@ -93,14 +93,10 @@ class LinkedList {
           console.log('Index Out of Bounds');
           return;
         }
-        console.log(tempNode);
         tempNode = tempNode.next;
-        console.log(tempNode);
         i++;
       }
       
-      console.log(item);
-      console.log(tempNode.value);
 
       // let newNode = new _Node(item, tempNode.next);
       // tempNode.next = newNode;

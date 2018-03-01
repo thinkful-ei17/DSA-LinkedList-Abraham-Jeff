@@ -14,10 +14,28 @@ function displayList(SSL, pretty=false) {
   }
 }
 
-function displaySize(SSL) {
 
+function displaySize(SSL) {
+  let depth = 0;
+  let head = SSL.head;
+  while (head !== null) {
+    depth++;
+    head = head.next;
+  }
+  console.log('We found this many stuffs', depth);
 }
 
 
-module.exports = displayList;
+function isEmptyCheck(SSL) {
+  if (SSL.head === null) {
+    console.log('Nothing to see here');
+  }
+  else {
+    console.log('It is not empty');
+  }
+}
+
+
+module.exports = {displayList, displaySize, isEmptyCheck};
+// module.exports = displayList;
 
